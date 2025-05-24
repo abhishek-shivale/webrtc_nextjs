@@ -3,22 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:server\"",
+    "dev:next": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
+    "dev:server": "nodemon --watch server --exec ts-node --project tsconfig.server.json server/index.ts",
     "lint": "next lint"
   },
   "dependencies": {
+    "concurrently": "^9.1.2",
+    "hls.js": "^1.6.2",
+    "mediasoup": "^3.15.8",
+    "mediasoup-client": "^3.11.0",
+    "mkcert": "^3.2.0",
+    "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "ts-node": "^10.9.2",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
+    "@types/hls.js": "^0.13.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
