@@ -8,8 +8,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';
 const port = parseInt(process.env.PORT || '3002', 10);
 
-const key = fs.readFileSync('/Users/abhishekshivale/Developer/assignment/server/certificate/localhost-key.pem');   // ✅ private key
-const cert = fs.readFileSync('/Users/abhishekshivale/Developer/assignment/server/certificate/localhost.pem'); // ✅ public cert
+const key = fs.readFileSync('/Users/abhishekshivale/Developer/webrtc-watch/certificates/localhost-key.pem');   // ✅ private key
+const cert = fs.readFileSync('/Users/abhishekshivale/Developer/webrtc-watch/certificates/localhost.pem'); // ✅ public cert
 
 const options = {
   key,
